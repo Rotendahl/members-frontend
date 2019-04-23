@@ -11,6 +11,15 @@
       "description": "The hosts that are allowed to acces cros origin",
       "value": "medlemssystem-staging.herokuapp.com"
     }
+  },
+  "environments": {
+    "test": {
+      "env": {
+        "REACT_APP_GRAPHQL_URL": "medlemssystem-staging.herokuapp.com"
+      },
+      "scripts": {
+      "test": "npm test"
+    }
   }
   }
 }
