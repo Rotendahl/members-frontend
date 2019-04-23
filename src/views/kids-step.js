@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {Spinner, CardHeader, CardFooter, Row, Col, Collapse, Button, CardBody, Card } from 'reactstrap';
-import Select from 'react-select'
-import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
-import {Form, FormGroup, Label, Input} from 'reactstrap'
+import {CardHeader, CardFooter, Collapse, Button, CardBody, Card } from 'reactstrap';
 
 class KidsStep extends Component {
   constructor(props) {

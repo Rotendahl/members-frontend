@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
-import {Spinner, CardHeader, CardFooter, Row, Col, Collapse, Button, CardBody, Card } from 'reactstrap';
-import Select from 'react-select'
-import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
-import {Form, FormGroup, Label, Input} from 'reactstrap'
+import {Col, Button, Form, FormGroup, Label, Input} from 'reactstrap'
 
 class InfoStep extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (<div>
       <h3 className="text-center">

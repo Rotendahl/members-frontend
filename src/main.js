@@ -27,9 +27,9 @@ export default class Main extends React.Component {
       </h3>
       <Progressbar percent={this.state.percent}/>
       <Container className="shadow-lg p-3 mb-5 bg-white rounded">
-        {this.state.percent == 0  && <InfoStep next={this.next}/>}
-        {this.state.percent == 50  && <VolunteerView next={this.next}/>}
-        {this.state.percent == 100  && <KidsStep/>}
+        {this.state.percent === 0  && <InfoStep next={this.next}/>}
+        {this.state.percent === 50  && <VolunteerView next={this.next}/>}
+        {this.state.percent === 100  && <KidsStep/>}
       </Container>
     </div>);
   }
