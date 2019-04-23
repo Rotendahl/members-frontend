@@ -1,6 +1,7 @@
 # members-frontend
 Front end for the Coding Pirates member system
 
+Create a pull request it will be deployed to heroku
 
 ----
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

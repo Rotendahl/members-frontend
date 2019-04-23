@@ -23,8 +23,11 @@ export default class Main extends React.Component {
   render() {
     return (<div>
       <h3 className="text-center">
-        Brugeroprettelse -- Til frivillige og forældre
+        Brugeroprettelse Coding Pirates
       </h3>
+      <h4 className="text-center">
+        Til frivillige og forældre
+      </h4>
       <Progressbar percent={this.state.percent}/>
       <Container className="shadow-lg p-3 mb-5 bg-white rounded">
         {this.state.percent === 0  && <InfoStep next={this.next}/>}

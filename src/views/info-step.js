@@ -9,6 +9,17 @@ class InfoStep extends Component {
       </h3>
       <Form>
         <FormGroup row>
+          <Label for="nameInput" sm={2}>Dit navn:</Label>
+          <Col sm={10}>
+            <Input
+              type="text"
+              name="name"
+              id="nameInput"
+              placeholder="Kaptajn Hack"
+            />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
           <Label for="emailInput" sm={2}>Din Email:</Label>
           <Col sm={10}>
             <Input

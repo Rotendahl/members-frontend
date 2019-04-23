@@ -15,7 +15,7 @@
   "environments": {
     "test": {
       "env": {
-        "REACT_APP_GRAPHQL_URL": "medlemssystem-staging.herokuapp.com"
+        "REACT_APP_GRAPHQL_URL": "medlemssystem-staging.herokuapp.com/graphql"
       },
       "scripts": {
       "test": "npm test"
