@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Header from './components/header'
+import { Container } from 'reactstrap';
+import VolunteerView from './views/volunteer-view'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+        <h3 className="text-center">
+          Brugeroprettelse -- Til frivillige og forældre
+        </h3>
+      <Container className="shadow-lg p-3 mb-5 bg-white rounded">
+        <div>
+          <VolunteerView/>
+        </div>
+      </Container>
+
     </div>
   );
 }
