@@ -49,8 +49,6 @@ class VolunteerView extends Component {
     }
 
     return (
-//<Query query={DEPARTMENT_QUERY}>
-//      {({ loading, error, data }) =>
           <div>
             <h3 className="text-center">
               Er du frivillig i en afdeling?
@@ -62,7 +60,7 @@ class VolunteerView extends Component {
             </Button>
           </Col>
           <Col>
-            <Button outline size="lg" block color="warning">
+            <Button outline size="lg" block color="warning" onClick={this.props.next}>
               Nej
             </Button>
           </Col>
@@ -74,11 +72,10 @@ class VolunteerView extends Component {
                   {selecter()}
               </CardBody>
               <CardFooter>Det er tilladt at vælge mere end en</CardFooter>
+              <Button color="success" onClick={this.props.next}>Næste</Button>
             </Card>
         </Collapse>
       </div>
-    //  }
-  //    </Query>
     );
   }
 }
