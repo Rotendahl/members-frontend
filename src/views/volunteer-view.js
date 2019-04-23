@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {CardHeader, CardFooter, Row, Col, Collapse, Button, CardBody, Card } from 'reactstrap';
+import {Spinner, CardHeader, CardFooter, Row, Col, Collapse, Button, CardBody, Card } from 'reactstrap';
 import Select from 'react-select'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
@@ -7,7 +7,12 @@ import gql from 'graphql-tag'
 const DEPARTMENT_QUERY = gql`
   {
     unions {
-    name
+      name
+      id
+      departmentSet {
+        id
+        name
+      }
     }
   }
 `
@@ -17,7 +22,7 @@ class VolunteerView extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.state = { collapse: false };
+    this.state = { collapse: false};
   }
 
   toggle() {
@@ -25,16 +30,27 @@ class VolunteerView extends Component {
   }
 
   render() {
-    var options = [
-      { value: 'chocolate', label: 'Chocolate' },
-      { value: 'strawberry', label: 'Strawberry' },
-      { value: 'vanilla', label: 'Vanilla' }
-    ]
+    var selecter = () => {
+      return (<Query query={DEPARTMENT_QUERY}>
+          {({ loading, error, data }) => {
+            if (loading){ return (<div className="text-center">
+              <Spinner style={{ width: '3rem', height: '3rem' }} />
+            </div>)}
+            else {
+              var unions = data.unions.map(union =>
+                ({value: union.id, label: union.name})
+              )
+              return (
+                <Select options={unions} isMulti placeholder="Forening"/>
+              )
+            }
+          }}
+      </Query>)
+    }
 
-
-
-    return (<Query query={DEPARTMENT_QUERY}>
-      {({ loading, error, data }) =>
+    return (
+//<Query query={DEPARTMENT_QUERY}>
+//      {({ loading, error, data }) =>
           <div>
             <h3 className="text-center">
               Er du frivillig i en afdeling?
@@ -53,19 +69,16 @@ class VolunteerView extends Component {
         </Row>
         <Collapse isOpen={this.state.collapse}>
             <Card style={{marginTop: "30px"}}>
-              <CardHeader>Vælg afdeling</CardHeader>
+              <CardHeader>Vælg Forening</CardHeader>
               <CardBody>
-                <Select options={options} isMulti placeholder="Afdelinger"/>
+                  {selecter()}
               </CardBody>
               <CardFooter>Det er tilladt at vælge mere end en</CardFooter>
             </Card>
         </Collapse>
-        load: {loading}
-        err: {error}
-        data: {console.log(data)}
       </div>
-      }
-      </Query>
+    //  }
+  //    </Query>
     );
   }
 }
