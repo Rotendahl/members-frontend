@@ -3,7 +3,7 @@
   "description": "The frontend for coding pirates member systems",
   "website": "https://codingpirates.dk",
   "buildpacks": [
-    { "url": "heroku/python" }
+    { "url": "mars/create-react-app" }
   ],
   "env" : {
     "REACT_APP_GRAPHQL_URL" : {
