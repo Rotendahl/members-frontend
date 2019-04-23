@@ -1,0 +1,16 @@
+{
+  "name": "Coding Pirates Members frontend",
+  "description": "The frontend for coding pirates member systems",
+  "website": "https://codingpirates.dk",
+  "buildpacks": [
+    { "url": "heroku/python" }
+  ],
+  "env" : {
+    "REACT_APP_GRAPHQL_URL" : {
+      "required": true,
+      "description": "The hosts that are allowed to acces cros origin",
+      "value": "medlemssystem-staging.herokuapp.com"
+    }
+  }
+  }
+}
