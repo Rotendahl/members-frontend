@@ -6,13 +6,9 @@ import gql from 'graphql-tag'
 
 const DEPARTMENT_QUERY = gql`
   {
-    unions {
+    departments {
       name
       id
-      departmentSet {
-        id
-        name
-      }
     }
   }
 `
@@ -37,11 +33,11 @@ class VolunteerView extends Component {
               <Spinner style={{ width: '3rem', height: '3rem' }} />
             </div>)}
             else {
-              var unions = data.unions.map(union =>
-                ({value: union.id, label: union.name})
+              var departments = data.departments.map(department =>
+                ({value: department.id, label: department.name})
               )
               return (
-                <Select options={unions} isMulti placeholder="Forening"/>
+                <Select options={departments} isMulti placeholder="Afdeling"/>
               )
             }
           }}
@@ -67,11 +63,11 @@ class VolunteerView extends Component {
         </Row>
         <Collapse isOpen={this.state.collapse}>
             <Card style={{marginTop: "30px"}}>
-              <CardHeader>Vælg Forening</CardHeader>
+              <CardHeader>Vælg afdeling</CardHeader>
               <CardBody>
                   {selecter()}
               </CardBody>
-              <CardFooter>Det er tilladt at vælge mere end en</CardFooter>
+              <CardFooter>Det er tilladt at vælge mere end en afdeling</CardFooter>
               <Button color="success" onClick={this.props.next}>Næste</Button>
             </Card>
         </Collapse>
