@@ -5,7 +5,7 @@ class InfoStep extends Component {
   render() {
     return (<div>
       <h3 className="text-center">
-        Indtast dine basis oplysninger:
+        Indtast dine basis oplysninger
       </h3>
       <Form>
         <FormGroup row>
