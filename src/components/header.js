@@ -9,6 +9,7 @@ import {
   Nav,
   NavItem,
   NavLink } from 'reactstrap';
+import '../style/header.css';
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -35,7 +36,7 @@ export default class Header extends React.Component {
           dark
           expand="sm"
         >
-          <NavbarBrand href="/">Medlemssystem</NavbarBrand>
+          <NavbarBrand href="/">MEDLEMSSYSTEM</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
