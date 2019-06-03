@@ -14,7 +14,7 @@ class KidsStep extends Component {
   render() {
     return (<div>
       <h3 className="text-center">
-        Har du nogle børn?
+        Har du nogen børn?
       </h3>
         <Button outline size="lg" block color="primary" onClick={this.toggle}>
         Ja
