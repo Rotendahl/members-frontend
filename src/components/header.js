@@ -1,6 +1,7 @@
-import React from 'react';
-import logo from '../assets/logo.png'
-import pixel from '../assets/pixel.png'
+import React from "react";
+import logo from "../assets/logo.png";
+import pixel from "../assets/pixel.png";
+import styled from "styled-components";
 import {
   Collapse,
   Navbar,
@@ -8,8 +9,8 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink } from 'reactstrap';
-import '../style/header.css';
+  NavLink
+} from "reactstrap";
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -28,23 +29,33 @@ export default class Header extends React.Component {
   render() {
     return (
       <div>
-        <div style={{backgroundImage: `url(${pixel})`, backgroundSize: "64px"}} className="header-pixels">
-          <img style={{height:"64px"}} src={logo} alt="Logo" className="header-logo"/>
-        </div>
-        <Navbar
-          color="warning"
-          dark
-          expand="sm"
+        <div
+          style={{ backgroundImage: `url(${pixel})`, backgroundSize: "64px" }}
+          className="header-pixels"
         >
-          <NavbarBrand href="/" className="navbar-brand-dark">MEDLEMSSYSTEM</NavbarBrand>
+          <img
+            style={{ height: "64px" }}
+            src={logo}
+            alt="Logo"
+            className="header-logo"
+          />
+        </div>
+        <Navbar color="warning" dark expand="sm">
+          <NavbarBrand href="/" className="navbar-brand-dark">
+            MEDLEMSSYSTEM
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/overview/" className="navbar-link-dark">Oversigt</NavLink>
+                <NavLink href="/overview/" className="navbar-link-dark">
+                  Oversigt
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/logout" className="navbar-link-style">Log Ud</NavLink>
+                <NavLink href="/logout" className="navbar-link-style">
+                  Log Ud
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>

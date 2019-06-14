@@ -2,11 +2,9 @@
   "name": "Coding Pirates Members frontend",
   "description": "The frontend for coding pirates member systems",
   "website": "https://codingpirates.dk",
-  "buildpacks": [
-    { "url": "mars/create-react-app" }
-  ],
-  "env" : {
-    "REACT_APP_GRAPHQL_URL" : {
+  "buildpacks": [{ "url": "mars/create-react-app" }],
+  "env": {
+    "REACT_APP_GRAPHQL_URL": {
       "required": true,
       "description": "The hosts that are allowed to acces cros origin",
       "value": "medlemssystem-staging.herokuapp.com"
@@ -18,8 +16,8 @@
         "REACT_APP_GRAPHQL_URL": "medlemssystem-staging.herokuapp.com/graphql"
       },
       "scripts": {
-      "test": "npm test"
+        "test": "npm test"
+      }
     }
-  }
   }
 }

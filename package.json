@@ -14,7 +14,8 @@
     "react-scripts": "3.0.0",
     "react-select": "^2.4.3",
     "react-step-progress-bar": "^1.0.3",
-    "reactstrap": "^8.0.0"
+    "reactstrap": "^8.0.0",
+    "styled-components": "^4.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "1.18.2"
   }
 }
