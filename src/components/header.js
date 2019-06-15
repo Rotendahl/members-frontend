@@ -1,66 +1,56 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo_png from "../assets/logo.png";
 import pixel from "../assets/pixel.png";
 import styled from "styled-components";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from "reactstrap";
+
+const phoneSize = "600px";
+
+const Container = styled.div`
+  background-color: #fcf23d;
+  display: grid;
+  grid-template-areas:
+    "pixel pixel pixel"
+    "title space image";
+
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: [pixel] 70px [nav] 50px;
+  @media (max-width: ${phoneSize}) {
+    grid-template-rows: [pixel] 40px [nav] 40px;
+    grid-template-columns: 50% 20% 30%;
+  }
+`;
+
+const PixelRow = styled.div`
+  grid-area: pixel;
+  background-image: url(${pixel});
+  background-size: 120px;
+  @media (max-width: ${phoneSize}) {
+    background-size: 70px;
+  }
+`;
+
+const Title = styled.h5`
+  text-align: center;
+  width: 100%;
+  grid-area: title;
+  margin: auto;
+  align-self: center;
+`;
+
+const Logo = styled.img`
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
+  height: 100%;
+`;
 
 export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
   render() {
     return (
-      <div>
-        <div
-          style={{ backgroundImage: `url(${pixel})`, backgroundSize: "64px" }}
-          className="header-pixels"
-        >
-          <img
-            style={{ height: "64px" }}
-            src={logo}
-            alt="Logo"
-            className="header-logo"
-          />
-        </div>
-        <Navbar color="warning" dark expand="sm">
-          <NavbarBrand href="/" className="navbar-brand-dark">
-            MEDLEMSSYSTEM
-          </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/overview/" className="navbar-link-dark">
-                  Oversigt
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/logout" className="navbar-link-style">
-                  Log Ud
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+      <Container>
+        <PixelRow />
+        <Title>Medlemssystem</Title>
+        <Logo src={logo_png} alt="Logo" />
+      </Container>
     );
   }
 }
