@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Test it matches the snapshot 1`] = `
+<div
+  className="sc-bdVaJa zZxdL"
+>
+  <div
+    className="sc-bwzfXH dSjrNB"
+  />
+  <h5
+    className="sc-htpNat hqQPgY"
+  >
+    Medlemssystem
+  </h5>
+  <img
+    alt="Logo"
+    className="sc-bxivhb leKRDg"
+    src="logo.png"
+  />
+</div>
+`;
